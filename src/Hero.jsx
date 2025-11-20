@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'; // 1. Impor useState
 
 // 2. Impor kedua gambar Anda dari folder assets
 import realImage from './assets/pf.jpg'; // Gambar 'Real' Anda
-import digitalImage from './assets/pfp.png'; // Ganti dengan nama file gambar digital Anda
+
 
 const HomeSection = () => {
   // 3. Buat state untuk melacak mode yang sedang aktif
-  const [mode, setMode] = useState('real'); // Default-nya adalah 'real'
+  const [mode, ] = useState('real'); // Default-nya adalah 'real'
 
   // (Logika animasi useEffect Anda dari sebelumnya tetap di sini)
   useEffect(() => {
@@ -55,29 +55,13 @@ const HomeSection = () => {
         {/* --- KONTEN KANAN (YANG BERUBAH) --- */}
         <div className="flex flex-col items-center js-fade-in opacity-0 translate-x-10 transition-all duration-700 ease-out delay-500">
           
-          <div className="flex space-x-6 mb-4">
-            {/* 4. Tambahkan onClick dan className dinamis */}
-            <span 
-              id="real-button" 
-              className={`font-bold text-xl cursor-pointer ${mode === 'real' ? 'text-white' : 'text-gray-400'}`}
-              onClick={() => setMode('real')}
-            >
-              Real
-            </span>
-            <span 
-              id="digital-button" 
-              className={`font-bold text-xl cursor-pointer ${mode === 'digital' ? 'text-white' : 'text-gray-400'}`}
-              onClick={() => setMode('digital')}
-            >
-              Digital
-            </span>
-          </div>
+          
 
           <div className="w-48 h-48 sm:w-64 sm:h-64 overflow-hidden rounded-full border-4 border-purple-500 shadow-xl">
             {/* 5. Ganti 'src' menjadi dinamis berdasarkan state 'mode' */}
             <img 
               id="profile-image" 
-              src={mode === 'real' ? realImage : digitalImage} 
+              src={mode === 'real' ? realImage : realImage} 
               alt="Foto Profil Faiz" 
               className="w-full h-full object-cover"
             />
